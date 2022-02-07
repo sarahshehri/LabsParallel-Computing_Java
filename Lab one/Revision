@@ -39,3 +39,29 @@
 		pi*=4.0;
 		System.out.println(pi);
 	}
+	
+	//1. Write a program that does the following:(a) Compute the average of array elements.(b) Sum two numbers, stored in a and b.
+	
+		public static void main(String []args) {
+			double storVal=0;
+			//create array 
+			double []calculateAve= new double[46];
+			//loop to fill array index 
+			for(int i=0;i< calculateAve.length;i++) {
+				calculateAve[i] =i+7;
+				//variable for store the sum of indexes
+				 storVal += calculateAve[i];
+				
+			}
+	         //calculate the average 
+	         double average= storVal/(calculateAve.length);
+	         System.out.println("The average of array elements= "+average);
+	         
+	         //Sum two numbers, stored in a and b
+	         int a=5;
+	         int b=90;
+	         int sum= a+b;
+	         System.out.print("The sum of two numbers= "+sum);
+		
+	         
+		} 

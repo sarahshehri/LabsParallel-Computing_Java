@@ -1,0 +1,39 @@
+
+	//Write, compile and run a program which does a matrix multiplication
+  
+  public static void main(String[] args) {
+
+		//creating two matrices 
+		double a[][]={{1,1,1},{2,2,2},{3,3,3}};    
+		double b[]={1,2,3}; 
+		
+		//creating another matrix to store the multiplication of two matrices   
+		double c[]=new double[3];
+		
+  
+		//multiplying and printing multiplication of 2 matrices      
+		for(int j=0;j<3;j++){    
+		c[j]=0;      
+		for(int k=0;k<3;k++)      
+		{ 
+			c[j]+= a[j][k]* b[k]; 
+			
+		}//end of k loop  
+		System.out.print(c[j]+" ");  //printing matrix element  
+		}//end of j loop  
+		System.out.println();//new line    
+		}    
+    
+    //Write, compile and run a program which does the pi computation
+    
+    public static void main(String[] args) {
+		double pi=0;
+		double factor=1;
+		
+		for(int i=0; i<100000;i++) {
+			pi+= factor/(2*i+1);
+			factor=-1*factor;
+		}
+		pi*=4.0;
+		System.out.println(pi);
+	}

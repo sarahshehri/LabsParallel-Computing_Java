@@ -24,7 +24,7 @@
 		System.out.println();//new line    
 		}    
     
-    //Write, compile and run a program which does the pi computation
+    //Write, compile and run a program which does the pi computation n=100000
     
     public static void main(String[] args) {
 		double pi=0;

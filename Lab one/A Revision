@@ -3,7 +3,7 @@
   
   public static void main(String[] args) {
 
-		//creating two matrices 
+		//creating two matrices a two dimensional b one dimensional 
 		double a[][]={{1,1,1},{2,2,2},{3,3,3}};    
 		double b[]={1,2,3}; 
 		
@@ -27,13 +27,15 @@
     //Write, compile and run a program which does the pi computation n=100000
     
     public static void main(String[] args) {
+                //initialise the variables pi ,factor
 		double pi=0;
-		double factor=1;
-		
+		double factor=1.0;
+		//Computing pi value 
 		for(int i=0; i<100000;i++) {
 			pi+= factor/(2*i+1);
 			factor=-1*factor;
 		}
+		//final operation for computing pi
 		pi*=4.0;
 		System.out.println(pi);
 	}

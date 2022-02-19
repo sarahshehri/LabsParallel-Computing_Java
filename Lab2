@@ -38,3 +38,93 @@ public class Task extends Thread {
 
    
 }
+
+
+//Write, compile and run a program which does a vector addition (first, using Thread class
+import java.lang.System.*;
+import java.io.*;
+import java.net.*;
+
+public class CustomThread{
+
+	public CustomThread() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		final int THREAD_COUNT=2;
+		int []x= {3,6,9,12};
+		int []y= {4,8,12,16};
+		int[]z=new int [x.length];
+		
+
+		
+		// Create threads
+		Thread thread1 = new Thread(new Task(x,y,z,0,THREAD_COUNT)); 
+		Thread thread2 = new Thread(new Task (x,y,z,1,THREAD_COUNT)); 
+		
+		// Start threads
+		thread1.start();
+		thread2.start();
+		
+		//print with addition 
+		 System.out.print("x:     ");
+         for (int i=0; i<x.length; i++){
+         
+         System.out.printf("%3d",x[i]);
+         }
+         System.out.println();
+         System.out.print("y:     ");
+         for (int i=0; i<y.length; i++){
+         System.out.printf("%3d",y[i]);
+         }
+         System.out.println();
+         System.out.print("z:     ");
+         for (int i=0; i<z.length; i++){
+         
+         System.out.printf("%3d",z[i]);
+         }
+         System.out.println();
+   }
+
+		
+
+	}
+	   class Task implements Runnable{
+		
+		int []x;
+		int []y;
+		int []z;
+	    int THREAD_COUNT=2;
+	    int thread_Rank ;
+	   
+	    
+	    public Task(int []x ,int[]y,int[] z,int thread_Rank,int THREAD_COUNT) {
+	    	this.x=x;
+	    	this.y=y;
+	    	this.z=z;
+	    	this.thread_Rank=thread_Rank;
+	    	this.THREAD_COUNT=THREAD_COUNT;
+	        
+	    	
+	    }
+	    
+	    @Override
+		public void run() { 
+	    	  VectorAdditionMethod();
+
+		
+	}
+
+	    void VectorAdditionMethod(){
+	    	 int local_length= x.length/THREAD_COUNT;
+	  	    int i_start=thread_Rank * local_length;
+	  		int i_end = i_start+local_length;
+	  		
+	    	for(int i=i_start;i<i_end;i++){
+
+	    	z[i]=x[i]+y[i];
+	    	}
+	    	}}
+
